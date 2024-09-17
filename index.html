@@ -5,9 +5,14 @@
     </head>
     <body>
         <h1>Password Encrypter</h1>
-
+        <label for="encryption-type">Encryption type:</label>
+        <select name="encryption-type" id="encryption-type">
+            <option value="method-1">Method 1</option>
+            <option value="method-2">Method 2</option>
+        </select>
         <input type="text" id="get-input">
-        <button id="button-submit">Transform</button>
+        <button id="encode">Encode</button>
+        <button id="decode">Decode</button>
 
         <span id="output-text"></span>
 
