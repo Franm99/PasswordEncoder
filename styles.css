@@ -1,0 +1,14 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+.mono {
+    font-family: "Roboto Mono", monospace;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
