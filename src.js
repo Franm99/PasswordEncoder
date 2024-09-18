@@ -6,7 +6,7 @@ NUM_SHIFTS = 4
  * @param {String} string 
  * @param {Number} num 
  * @param {String} direction 
- * @returns 
+ * @returns shifted string
  */
 function shiftString(string, num = null, direction = "left") {
     if (num === null) {
@@ -28,7 +28,7 @@ function shiftString(string, num = null, direction = "left") {
  * 
  * @param {String} string 
  * @param {Boolean} reverse 
- * @returns 
+ * @returns rearranged string
  */
 function rearrangeByParity(string, reverse=false) {
     if (reverse == false) {
@@ -54,6 +54,13 @@ function rearrangeByParity(string, reverse=false) {
         }
         return new_str
     }
+}
+
+
+
+function copyText() {
+    var output_field = document.getElementById("output-text");
+    navigator.clipboard.writeText(output_field.innerText);
 }
 
 
