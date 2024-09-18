@@ -64,6 +64,24 @@ function copyText() {
 }
 
 
+function changeEncryptionType() {
+    var enc_type = document.getElementById("encryption-type");
+    if (enc_type.classList.contains('btn-method1')) {
+        enc_type.classList.remove('btn-method1');
+        enc_type.classList.add('btn-method2');
+        return true;
+    } else if (enc_type.className.includes('btn-method2')) {
+        enc_type.classList.remove('btn-method2');
+        enc_type.classList.add('btn-method3');
+        return true;
+    } else if (enc_type.className.includes('btn-method3')) {
+        enc_type.classList.remove('btn-method3');
+        enc_type.classList.add('btn-method1');
+        return true;
+    }
+}
+
+
 window.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("encode").addEventListener("click", function() {
