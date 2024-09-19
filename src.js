@@ -69,14 +69,17 @@ function changeEncryptionType() {
     if (enc_type.classList.contains('btn-method1')) {
         enc_type.classList.remove('btn-method1');
         enc_type.classList.add('btn-method2');
+        enc_type.textContent = "Strong";
         return true;
     } else if (enc_type.className.includes('btn-method2')) {
         enc_type.classList.remove('btn-method2');
         enc_type.classList.add('btn-method3');
+        enc_type.textContent = "Very Strong";
         return true;
     } else if (enc_type.className.includes('btn-method3')) {
         enc_type.classList.remove('btn-method3');
         enc_type.classList.add('btn-method1');
+        enc_type.textContent = "Weak";
         return true;
     }
 }
@@ -86,30 +89,38 @@ window.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("encode").addEventListener("click", function() {
         let pwd = document.getElementById("get-input").value;
-        let method = document.getElementById("encryption-type").value;
-        var pwdShifted = ""
+        let method = document.getElementById("encryption-type").innerText;
+        var pwdEncoded = ""
         
-        if (method == "method-1") {
+        if (method == "Weak") {
+            pwdEncoded = shiftString(pwd, NUM_SHIFTS);
+            console.log(pwdEncoded);
+        } else  if (method == "Strong") {
+            pwdEncoded = rearrangeByParity(pwd);
+            console.log(pwdEncoded);
+        } else if (method == "Very Strong") {
             pwdShifted = shiftString(pwd, NUM_SHIFTS);
-        } else {
-            pwdShifted = rearrangeByParity(pwd);
-            console.log(pwdShifted);
+            pwdEncoded = rearrangeByParity(pwdShifted);
+            console.log(pwdEncoded);
         }
 
-        let pwdShiftedEncoded = btoa(pwdShifted);
-        document.getElementById("output-text").innerText = pwdShiftedEncoded;
+        let pwdEncrypted = btoa(pwdEncoded);
+        document.getElementById("output-text").innerText = pwdEncrypted;
     })
 
     document.getElementById("decode").addEventListener("click", function() {
-        let encoded = document.getElementById("get-input").value;
-        let method = document.getElementById("encryption-type").value;
+        let encrypted = document.getElementById("get-input").value;
+        let method = document.getElementById("encryption-type").innerText;
 
-        let pwdShifted = atob(encoded);
+        let pwdEncoded = atob(encrypted);
 
-        if (method == "method-1") {
+        if (method == "Weak") {
+            pwd = shiftString(pwdEncoded, NUM_SHIFTS, "right");
+        } else if (method == "Strong") {
+            pwd = rearrangeByParity(pwdEncoded, reverse=true);
+        } else if (method == "Very Strong") {
+            pwdShifted = rearrangeByParity(pwdEncoded, reverse=true);
             pwd = shiftString(pwdShifted, NUM_SHIFTS, "right");
-        } else {
-            pwd = rearrangeByParity(pwdShifted, reverse=true);
         }
 
         document.getElementById("output-text").innerText = pwd;

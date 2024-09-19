@@ -1,11 +1,24 @@
 :root {
-    --color-test1: #010101;
-    --color-test2: #c4c4c4;
-    --color-test3: #8b8080;
+    --color-test1: #0D0D0D;
+    --color-test2: #2ECC71;
+    --color-test3: #1A472A;
+    --color-test4: #1C1C1E;
+    --color-test5: #A1FFCE;
+    --color-test6: #00FF41;
+    --color-test7: white;
 }
 
 * {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto Mono", sans-serif;
+}
+
+::selection {
+    background-color: var(--color-test6);
+    color: var(--color-test4);
+}
+
+html {
+    background-color: var(--color-test1);
 }
 
 .mono {
@@ -24,10 +37,24 @@ main {
     flex-direction: column;
     margin: 30px;
     padding: 30px;
-    border: solid black 1px;
     width: 500px;
     height: 300px;
     border-radius: 20px;
+    background-color: var(--color-test4);
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    background-color: var(--color-test6);
+}
+
+.btn:hover {
+    background-color: var(--color-test5);
+}
+
+.btn:active {
+    background-color: var(--color-test6);
 }
 
 #div-actions {
@@ -38,10 +65,18 @@ main {
 
 #app-title {
     margin-top: 0;
-    font-size: 3em;
+    font-size: 2.5em;
+    color: var(--color-test6);
 }
 
 #get-input {
+    outline: none;
+    caret-shape: underscore;
+}
+
+#get-input:focus {
+    outline: solid var(--color-test6) 3px;
+    caret-color: var(--color-test6);
 }
 
 .pwd-display {
@@ -49,28 +84,42 @@ main {
     height: 30px;
     text-align: center;
     border-radius: 50px;
+    background-color: var(--color-test7);
+    border: none;
+    color: var(--color-test3);
 }
 
 .btn-encrypt {
     height: 100%;
     aspect-ratio: 1;
+    border-radius: 100%;
+    padding: 10px;
 }
+
 
 #encryption-type {
     position: absolute;
     transform: translate(-50%, 0);
     padding: 10px 50px;
     border: none;
+    height: 100%;
+    width: 40%;
+    font-size: 0.9em;
+    font-weight: 800;
+    border-radius: 20px;
+    background-color: var(--color-test5);
 }
 
 #output-field {
-    border: solid black 1px;
     position: relative;
     height: 30px;
+    border: solid var(--color-test7);
 }
 
 #output-text {
     position: absolute;
+    width: 100%;
+    text-overflow: clip;
 }
 
 .abs-centered {
@@ -87,15 +136,8 @@ main {
     top: 50%;
     bottom: 50%;
     right: 0;
-    border: none;
-    background-color: var(--color-test3);
-    cursor: pointer;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-}
-
-.copy-button:hover {
-    background-color: var(--color-test1);
 }
 
 #encode {
@@ -106,16 +148,4 @@ main {
 #decode {
     position: absolute;
     right: 50px;
-}
-
-.btn-method1 {
-    background-color: red;
-}
-
-.btn-method2 {
-    background-color: green;
-}
-
-.btn-method3 {
-    background-color: blue;
 }
