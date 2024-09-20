@@ -277,6 +277,16 @@ footer {
         right: 20px;
     }
 
+    #info-modal {
+        width: 350px;
+        height: 550px;
+    }
+
+    #close-info {
+        top: 30pxpx;
+        right: 20px;
+    }
+
     .pwd-display {
         width: 90%;
         margin-left: auto;
