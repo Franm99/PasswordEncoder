@@ -179,8 +179,9 @@ footer {
 
 #output-text {
     position: absolute;
+    display: block;
     width: 100%;
-    text-overflow: clip;
+    overflow: hidden;
 }
 
 .abs-centered {
