@@ -297,7 +297,13 @@ footer {
 
     #encryption-type {
         font-size: .8em;
-        background-color: var(--color5);
+        background-color: var(--color5_faded);
+        -webkit-tap-highlight-color:var(--color1);
+
+    }
+
+    #encryption-type {
+        background-color: var(--color5_faded);
     }
 
     #encode {
