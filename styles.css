@@ -1,12 +1,13 @@
 :root {
-    --color-test1: #0D0D0D;
-    --color-test2: #2ECC71;
-    --color-test3: #1A472A;
-    --color-test4: #1C1C1E;
-    --color-test5: #A1FFCE;
-    --color-test5_faded: #A1FFCE33;
-    --color-test6: #00FF41;
-    --color-test7: white;
+    --color1: #0D0D0D;
+    --color2: #2ECC71;
+    --color3: #1A472A;
+    --color4: #1C1C1E;
+    --color5: #A1FFCE;
+    --color5_faded: #A1FFCE33;
+    --color5_faded2: #A1FFCE55;
+    --color6: #00FF41;
+    --color7: white;
 }
 
 * {
@@ -14,8 +15,8 @@
 }
 
 ::selection {
-    background-color: var(--color-test6);
-    color: var(--color-test4);
+    background-color: var(--color6);
+    color: var(--color4);
 }
 
 a {
@@ -23,7 +24,7 @@ a {
 }
 
 html {
-    background-color: var(--color-test1);
+    background-color: var(--color1);
 }
 
 .mono {
@@ -45,7 +46,7 @@ main {
     width: 500px;
     height: 300px;
     border-radius: 20px;
-    background-color: var(--color-test4);
+    background-color: var(--color4);
 }
 
 footer {
@@ -59,18 +60,18 @@ footer {
 }
 
 #copyright {
-    color: var(--color-test5_faded);
+    color: var(--color5_faded);
     position: absolute;
     right: 10%;
 }
 
 #copyright a {
     position: relative;
-    color: var(--color-test5_faded)
+    color: var(--color5_faded)
 }
 
 #copyright a:hover {
-    color: var(--color-test6);
+    color: var(--color6);
     transition: 1s;
 }
 
@@ -81,7 +82,7 @@ footer {
     left: 50%;
     width: 0;
     height: 3px;
-    background-color: var(--color-test6);
+    background-color: var(--color6);
     transform: translateX(-50%);
     transition: width 0.3s ease-in-out;
 }
@@ -93,15 +94,15 @@ footer {
 .btn {
     cursor: pointer;
     border: none;
-    background-color: var(--color-test6);
+    background-color: var(--color6);
 }
 
 .btn:hover {
-    background-color: var(--color-test5);
+    background-color: var(--color5);
 }
 
 .btn:active {
-    background-color: var(--color-test6);
+    background-color: var(--color6);
 }
 
 #div-actions {
@@ -113,7 +114,43 @@ footer {
 #app-title {
     margin-top: 0;
     font-size: 2.5em;
-    color: var(--color-test6);
+    color: var(--color6);
+}
+
+.action-button {
+    border: none;
+    border-radius: 100%;
+    height: 30px;
+    aspect-ratio: 1;
+}
+
+#open-info {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-color: var(--color5_faded);
+}
+
+#close-info {
+    position: absolute;
+    top: 65px;
+    right: 40px;
+}
+
+#info-modal {
+    position: absolute;
+    width: 600px;
+    height: 450px;
+    background-color: #0D0D0DAA;
+    color: var(--color5);
+}
+
+#open-info:hover {
+    background-color: var(--color5_faded2);
+}
+
+#open-info:active {
+    background-color: var(--color3);
 }
 
 #get-input {
@@ -122,8 +159,8 @@ footer {
 }
 
 #get-input:focus {
-    outline: solid var(--color-test6) 3px;
-    caret-color: var(--color-test6);
+    outline: solid var(--color6) 3px;
+    caret-color: var(--color6);
 }
 
 .pwd-display {
@@ -131,9 +168,9 @@ footer {
     height: 30px;
     text-align: center;
     border-radius: 50px;
-    background-color: var(--color-test7);
+    background-color: var(--color7);
     border: none;
-    color: var(--color-test3);
+    color: var(--color3);
 }
 
 .btn-encrypt {
@@ -163,18 +200,23 @@ footer {
     font-size: 0.9em;
     font-weight: 800;
     border-radius: 20px;
-    background-color: var(--color-test5_faded);
+    background-color: var(--color5_faded);
+    color: var(--color6);
     cursor: pointer;
 }
 
 #encryption-type:hover {
-    background-color: var(--color-test5);
+    background-color: var(--color5_faded2);
+}
+
+#encryption-type:active {
+    background-color: var(--color3);
 }
 
 #output-field {
     position: relative;
     height: 30px;
-    border: solid var(--color-test7);
+    border: solid var(--color7);
 }
 
 #output-text {
@@ -230,6 +272,11 @@ footer {
         padding: 30px 0;
     }
 
+    #open-info {
+        top: 20px;
+        right: 20px;
+    }
+
     .pwd-display {
         width: 90%;
         margin-left: auto;
@@ -240,7 +287,7 @@ footer {
 
     #encryption-type {
         font-size: .8em;
-        background-color: var(--color-test5);
+        background-color: var(--color5);
     }
 
     #encode {
@@ -256,7 +303,7 @@ footer {
     }
 
     #copyright a {
-        color: var(--color-test6);
+        color: var(--color6);
     }
 
     #copyright a::after {
@@ -264,6 +311,6 @@ footer {
         left: 50%;
         width: 100%;
         height: 3px;
-        background-color: var(--color-test6);
+        background-color: var(--color6);
     }
 }

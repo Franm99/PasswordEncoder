@@ -84,6 +84,13 @@ function changeEncryptionType() {
     }
 }
 
+function openInfoModal() {
+    document.getElementById("info-modal").hidden = false;
+}
+
+function closeInfoModal() {
+    document.getElementById("info-modal").hidden = true;
+}
 
 window.addEventListener("DOMContentLoaded", function() {
 
