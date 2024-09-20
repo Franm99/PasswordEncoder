@@ -219,6 +219,9 @@ footer {
 /** MEDIA QUERIES **/
 
 @media only screen and (max-width: 600px) {
+    body {
+        margin: 0;
+    }
     main {
         width: 350px;
         height: 400px;
