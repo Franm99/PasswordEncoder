@@ -142,7 +142,7 @@ footer {
     position: absolute;
     width: 600px;
     height: 450px;
-    background-color: #0D0D0DEE;
+    background-color: #0D0D0DDF;
     color: var(--color5);
 }
 
@@ -363,12 +363,7 @@ footer {
     #encryption-type {
         font-size: .8em;
         background-color: var(--color5_faded);
-        -webkit-tap-highlight-color:var(--color1);
-
-    }
-
-    #encryption-type {
-        background-color: var(--color5_faded);
+        text-align: center;
     }
 
     #encode {
